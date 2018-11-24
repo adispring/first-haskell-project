@@ -1,6 +1,12 @@
 module Main where
 
+import Data.Char
+import Data.List
+
 import Lib
 
 main :: IO ()
-main = someFunc
+main = do line <- fmap (intersperse '-' . reverse . map toUpper) getLine
+          putStrLn line
+
+
