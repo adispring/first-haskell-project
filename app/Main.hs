@@ -1,14 +1,15 @@
 module Main where
 
+import           Control.Monad.State
 import           Data.Char
 import           Data.List
 import           System.Random
-import Control.Monad.State
 
 import           Lib
+import           MonadTransformers
 import           StateMonadDemo
 
 main :: IO ()
-main = putStrLn . show $ evalState rollDice (mkStdGen 0)
+main = askPassphrase
 
 
