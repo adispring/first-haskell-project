@@ -9,11 +9,9 @@ import           System.Random
 import           Lib
 import           MonadTransformers
 import           StateMonadDemo
+import TwoFriendly
 
 main :: IO ()
-main = do result <- runMaybeT askPassphrase2
-          case result of
-            Just _  -> return ()
-            Nothing  -> putStrLn "Some failure happened... perhaps wrong password?"
-
+-- main = putStrLn $ show (is_power2 $ gcd 78 53)
+main = putStrLn $ show (length $ twoFriendly (10^6))
 
